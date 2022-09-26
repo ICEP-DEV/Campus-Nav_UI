@@ -1,0 +1,130 @@
+
+<body >
+    <!--<script>
+        function changeType()
+  
+           {
+                          
+          var diffTypes = document.getElementById("userType").value;
+          
+          if (diffTypes.value == "null")
+              {
+                document.getElementById("email").style.visibility = "hidden";
+                
+  
+              }else
+              {
+                  document.getElementById("email").style.visibility = visible;
+              }
+              }
+      </scripT>    popup for the user_id, team decided otherwise-->
+  
+  
+      <form action="#">  <!--link needs to be provided-->
+      <div class="login-wrap">
+          <div class="login-html">
+              <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Login</label>
+              <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Register</label>
+              <div class="login-form">
+                  <div class="sign-in-htm">
+                      <div class="group">
+                        
+                        <!-- <i class="fa fa-user icon"></i> --> 
+                          <label for="user" class="label"> Email</label> 
+                          <input  type="email" class="input" id="loginEmail">         <!-- match the ids with the ones in the backend   --> 
+                      </div>
+                      <div class="group">
+                            <!--  <i class="fa fa-key icon"></i> --> 
+                          <label for="pass" class="label"> Password</label>
+                          <input type="password" class="input" data-type="password" id="loginPass">
+                      </div>
+                      <!--<div class="group">
+                          <input id="check" type="checkbox" class="check" checked>
+                          <label for="check"><span class="icon"></span> Keep me Signed in</label>
+                      </div> -->
+                    
+                      <div class="group">
+                          <input type="submit" class="button" value="Login">
+  
+                      </div>
+                     
+                      <div class="hr"></div>
+                      <div class="foot-lnk">
+                              <a href="#forgot">Forgot Password?</a>  <!--link needs to be provided-->
+                      </div>
+                  </div>
+                  
+                  <div class="sign-up-htm">
+                      
+  
+                <div id="userID" class="group"  >
+             
+                          <label  for="user" class="label">ID Number</label>
+                          <input type="text" class="input" name = "studentNumber"  >
+                      </div>
+                   
+                      <div class="group">
+                          
+                          <label for="user" class="label">Name</label>
+                          <input type="text" class="input" id="name">
+                      </div>
+                      <div class="group">
+                              <!--     <i class="fa fa-user icon"></i>-->
+                          <label class="label">Surname</label>
+                          <input type="text" class="input">
+                      </div>
+                   <!-- <div class="group">
+                          <label for="user" class="label">Age</label>
+                          <input type="number" class="input" id="age">
+                      </div> -->
+                      <div class="group" >
+                          <label for="user" class="label">Gender</label>
+                          <select class="drop" id="gender">
+                              <option value="null">Gender</option>
+                             <option value="student">Female</option>
+                              <option value="staff">Male</option>
+                          </select> 
+                          
+                      </div>
+                      <div class="group"  >
+                          <label for="user" class="label"> User Type</label>
+                          <select class="drop"  id="userType" onselect="changeType()">
+                              <option value="null"> Select UserType</option>
+                             <option value="student">Student</option>
+                              <option value="staff">Staff</option>
+                               <option value="visiter">Visitor</option>
+                              </select>         
+                      </div>
+                      <div class="group">
+                          <label for="pass" class="label">Email Address</label>
+                           <!--   <i class="fa fa-user icon"></i> -->
+                          <input type="email" class="input" id="email">
+                      </div>
+                      <div class="group">
+                          <label for="pass" class="label">Password</label>
+                            <!--  s <i class="fa fa-lock icon"></i>-->
+                          <input type="password" class="input" data-type="password" id="pass">
+                      </div>
+                      <div class="group">
+                          <label for="pass" class="label">Confirm Password</label>
+                          <!--    <i class="fa fa-lock icon"></i> -->
+                          <input  type="password" class="input" data-type="password" id="confPass">
+                      </div>
+                      
+                      <form action="suceesful.html">
+                      <div class="group">
+                          <input type="submit" class="button" value="Register">  <!--link needs to be provided-->
+                        
+                        
+                      </div>
+                  </form>
+                      <!--<div class="hr"></div>
+                    <div class="foot-lnk">
+                         <a for="tab-1">Already Member?</a>
+                      </div>-->
+                  </div>
+              </div>
+          </div>
+      </div>
+  </form>
+  </body>

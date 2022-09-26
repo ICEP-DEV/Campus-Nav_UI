@@ -1,0 +1,1777 @@
+
+<style>
+    *,html{
+   scroll-behavior: smooth;
+   }
+   :root{
+     scrollbar-color: rgb(210,210,210) rgb(46,54,69) !important;
+     scrollbar-width: thin !important;
+   }
+   body{
+   margin:0;
+   overflow-x:hidden;
+   width:100%;
+   font-family: 'Kanit', sans-serif;
+   }
+   
+   /*DEFAULT*/
+   p{
+   font-family: 'Kanit', sans-serif;
+   }
+   a{
+   text-decoration:none;
+   }
+   li{
+   list-style:none;
+   padding:5px;
+   }
+   .title{
+   font-size:2em;
+   font-family: 'Archivo Black', sans-serif;
+   box-shadow: 0 4px 8px 0 white;
+   }
+   .sub-title{
+   font-size:1em;
+   font-family: 'Kanit', sans-serif;
+   color:rgb(255, 250, 250);
+   }
+   em{
+   font-style:normal;
+   color:#131224;
+   }
+   .btn1{
+   padding:10px 20px;
+   box-shadow:0px 3px 8px -3px rgba(1,1,1,0.5);
+   outline:none;
+   border:0;
+   background:red;
+   border-radius:20px;
+   color:white;
+   font-weight:400;
+   text-align:center;
+   transition:0.5s;
+   }
+   .btn1:hover{
+   background-color:rgb(180, 205, 255);;
+   }
+   .btn2{
+   padding:10px 20px;
+   box-shadow:0px 3px 8px -3px rgba(1,1,1,0.5);
+   outline:none;
+   border:0;
+   background:#a7a5c7;
+   border-radius:20px;
+   color:#fff;
+   font-weight:400;
+   text-align:center;
+   transition:0.5s;
+   }
+   .btn2:hover{
+   background:#8987bd;
+   }
+   .banner{
+   margin:auto;
+   width:70%;
+   text-align:center;
+   }
+   #scroll-up{
+   position:fixed;
+   bottom:2em;
+   right:2em;
+   background:#1e1e1e;
+   width:20px;
+   height:20px;
+   text-align:center;
+   color:#fff;
+   padding:5px;
+   border-radius:50%;
+   box-shadow:0px 6px 16px -6px rgba(1,1,1,0.5);
+   z-index:999;
+   display:none;
+   }
+   .inline-photo {
+     opacity: 0;
+     transform: translateY(4em) rotateZ(-0deg);
+     transition: transform 4s .25s cubic-bezier(0,1,.3,1),opacity .3s .25s ease-out;
+     will-change: transform, opacity;
+   }
+   .inline-photo.is-visible {
+     opacity: 1;
+     transform: rotateZ(-0deg);
+   }
+   
+   
+   /*LOADER*/
+   .loading {
+     width: 100vw;
+     height: 100vh;
+     position: fixed;
+     top: 0;
+     left: 0;
+     background: #f9f9ff;
+     display: flex;
+     flex-direction: column;
+     align-items: stretch;
+     justify-content: center;
+     align-content: center;
+   }
+   
+   .load {
+     min-height: 60pt;
+   }
+   
+   @keyframes loading {
+     0% {
+       width: 50pt;
+       height: 50pt;
+       margin-top: 0;
+     }
+     25% {
+       height: 4pt;
+       margin-top: 23pt;
+     }
+     50% {
+       width: 4pt;
+     }
+     75% {
+       width: 50pt;
+     }
+     100% {
+       width: 50pt;
+       height: 50pt;
+       margin-top: 0;
+     }
+   }
+   
+   .loader {
+     width: 50pt;
+     height: 50pt;
+     border-radius: 100%;
+     border: #ffffff 4pt solid;
+     margin-left: auto;
+     margin-right: auto;
+     background-color: transparent;
+     animation: loading 1s infinite;
+   }
+   
+   .load-text {
+     padding-top: 15px;
+     text-align: center;
+     font: 14pt "Helvetica Neue", Helvetica, Arial, sans-serif;
+     color: #fff;
+   }
+   /* Add animation to "page content" */
+   .animate-bottom {
+     position: relative;
+     -webkit-animation-name: animatebottom;
+     -webkit-animation-duration: 1s;
+     animation-name: animatebottom;
+     animation-duration: 1s
+   }
+   
+   @-webkit-keyframes animatebottom {
+     from { bottom:0px; opacity:0 } 
+     to { bottom:0px; opacity:1 }
+   }
+   
+   @keyframes animatebottom { 
+     from{ bottom:0px; opacity:0 } 
+     to{ bottom:0; opacity:1 }
+   }
+   
+   #myDiv {
+     display: none;
+   }
+   
+   
+   
+   /*NAV-BAR*/
+   header{
+     position:fixed;
+     top:0;
+     width:100%;
+     z-index:9;
+   }
+   
+   .topnav {
+     overflow: hidden;
+     width:100%;
+     margin:auto;
+     background-color: transparent;
+   }
+   
+   .topnav a {
+     float: right;
+     display: block;
+     color: #f2f2f2;
+     text-align: center;
+     padding: 14px 16px;
+     text-decoration: none;
+     font-size: 17px;
+     transition:0.5s;
+   }
+   
+   .topnav .logo{
+   float:left;
+   font-family: 'Fredoka One', cursive;
+   color:rgb(241, 0, 0);
+   font-size:2em;
+   padding-left: 1px;
+   position:left;
+   }
+   
+   .active {
+     color:gray;
+   }
+   
+   .topnav .icon {
+     display: none;
+   }
+   
+   .dropdown {
+     float: right;
+     overflow: hidden;
+   }
+   
+   .dropdown .dropbtn {
+     font-size: 17px;    
+     border: none;
+     outline: none;
+     color: white;
+     padding: 14px 16px;
+     background-color: inherit;
+     font-family: inherit;
+     margin: 0;
+   }
+   
+   .dropdown-content {
+     display: none;
+     position: absolute;
+     background-color: #f9f9f9;
+     min-width: 160px;
+     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+     z-index: 1;
+   }
+   
+   .dropdown-content a {
+     float: none;
+     color: black;
+     padding: 12px 16px;
+     text-decoration: none;
+     display: block;
+     text-align: left;
+   }
+   
+   .topnav a:hover, .dropdown:hover .dropbtn {
+     color:rgb(180, 205, 255);
+   }
+   
+   .dropdown-content a:hover {
+     background-color: #ddd;
+     color: black;
+   }
+   
+   .dropdown:hover .dropdown-content {
+     display: block;
+   }
+   
+   @media screen and (max-width: 600px) {
+    .topnav{
+    background:transparent;
+    width:100%;
+    }
+     .topnav a:not(:first-child), .dropdown .dropbtn {
+       display: none;
+     }
+     .topnav a.icon {
+       float: right;
+       display: block;
+     }
+   }
+   
+   @media screen and (max-width: 600px) {
+     .topnav.responsive {position: relative;}
+     .topnav.responsive .icon {
+       position: absolute;
+       right: 0;
+       top: 0;
+     }
+     .topnav.responsive a {
+       float: none;
+       display: block;
+       text-align: left;
+     }
+     .topnav.responsive .dropdown {float: none;}
+     .topnav.responsive .dropdown-content {position: relative;}
+     .topnav.responsive .dropdown .dropbtn {
+       display: block;
+       width: 100%;
+       text-align: left;
+     }
+   }
+   #navbar {
+     background-color: #fff;
+     position: fixed;
+     top: -60px;
+     width: 100%;
+     display: block;
+     z-index:9;
+     box-shadow:0px 6px 16px -6px rgba(1,1,1,0.5);
+     transition: top 0.3s;
+   }
+   
+   #navbar a {
+     float: right;
+     display: block;
+     color: #000;
+     text-align: center;
+     padding: 15px;
+     text-decoration: none;
+     font-size: 17px;
+   }
+   
+   #navbar .logo{
+   float:left;
+   }
+   #navbar .mash{
+   float:left;
+   color: orange;
+   
+   }
+   #navbar a:hover {
+     background-color: #ddd;
+     color: black;
+   }
+   
+   .slide-menu .dropdown-content {
+     display: none;
+     position: absolute;
+     background-color: #f9f9f9;
+     min-width: 160px;
+     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+     z-index: 1;
+   }
+   
+   .slide-menu .dropdown .dropbtn {
+     font-size: 17px;    
+     border: none;
+     outline: none;
+     color: #000;
+     padding: 14px 16px;
+     background-color: inherit;
+     font-family: inherit;
+     margin: 0;
+   }
+   
+   @media (max-width:600px){
+   #navbar{
+   display:none;
+   }
+   }
+   
+   .main{
+   width:100%;
+   height:70vh;
+   background-image:url("../../assets/images/7.jpg");
+   background-size:100% 100%;
+   }
+   
+   .main table{
+   width:100%;
+   height:100vh;
+   }
+   
+   .main table td{
+   width:50%;
+   }
+   
+   .main table td img{
+   width:80%;
+   float:right;
+   height:80%;
+   margin-top:10%;
+   pointer-events:none;
+   --delay: 0s;
+   animation: arrows 4s var(--delay) infinite ease-in;
+   }
+   
+   @keyframes arrows {
+     0%,
+     100% {
+       color: black;
+       transform: translateY(0);
+     }
+     50% {
+       color: #3AB493;
+       transform: translateY(20px);
+     }
+   }
+   
+   .main table td section{
+   margin:5%;
+   color:#fff;
+   }
+   
+   .main table td section .sub-title,.main table td section p{
+   color:rgb(180, 205, 255);
+   }
+   
+   @media (max-width:600px){
+   .main table td{
+   width:100%;
+   display:block;
+   }
+   .main table td section{
+   margin-top:20%;
+   }
+   .main table td img{
+   width:60%;
+   height:60%;
+   margin-top:0%;
+   pointer-events:none;
+   }
+   
+   }
+   
+   
+   
+   
+   /*CARDS*/
+   .section0{
+   width:100%;
+   padding:30px;
+   }
+   
+   .section0 .card{
+   width:40%;
+   padding:30px;
+   box-shadow:0px 6px 16px -6px rgba(1,1,1,0.5);
+   border-radius:5px;
+   margin:1%;
+   display:inline-block;
+   text-align:center;
+   border-top:2px solid #4033ff;
+   }
+   
+   .section0 .banner{
+   box-shadow:0px 0px 0px 0px rgba(1,1,1,0.5);
+   border-top:0px;
+   }
+   
+   .section0 .card i{
+   font-size:4em;
+   color:#3077e8;
+   float:left;
+   }
+   
+   @media (max-width:600px){
+   .section0{
+   display:flex;
+   align-items:left;
+   justify-content: left;
+   position:relative;
+   overflow-x:auto;
+   scrollbar-width:none;
+   scroll-behavior: smooth;
+   }
+   .section0 .card{
+   min-width:79%;
+   }
+   }
+   
+   
+   
+   /*CONTAINER*/
+   .container{
+   width:100%;
+   }
+   
+   .container table{
+   width:100%;
+   }
+   
+   .container table td{
+   width:50%;
+   }
+   
+   .container table td img{
+   margin:auto;
+   }
+   
+   .container table td:nth-child(2),.container table .aboutus_td2{
+   padding:20px;
+   }
+   
+   @media (max-width:600px){
+   .container table td{
+   width:100%;
+   display:block;
+   }
+   .container table td img{
+   width:90%;
+   }
+   .container table td:nth-child(2),.container table .aboutus_td2{
+   padding:10px;
+   width:95%;
+   }
+   }
+   
+          .slick{
+       width:90%;
+       margin-left:auto;
+       margin-right:auto;
+       }
+       
+       .slick table{
+       width:100%;
+       margin-left:auto;
+       margin-right:auto;
+       }
+       
+       .slick table td{
+       width:30%;
+       padding:1%;
+       }
+     
+       .slick table td ul li{
+       list-style:none;
+       padding:10px 0px;
+       }
+       
+       .slick table td ul li a{
+       text-decoration:none;
+       transition:0.5s;
+       }
+       
+       .slick table td ul li a:hover{
+       color:#8798bd;
+       }
+       
+       .slick table td ul li h3{
+       color:#eeedfa;
+       }
+       
+       .slick table td ul li p{
+       color:rgba(1,1,1,0.7);
+       }
+       
+       .slick table td:nth-child(1) ul{
+       text-align:right;
+       }
+       
+       .slick table td:nth-child(3) ul{
+       text-align:left;
+       }
+       
+       .slick table td:nth-child(2) .card{
+       margin-left:auto;
+       margin-right:auto;
+       }
+       
+       .slick .card {
+           position: relative;
+           width: 90%;
+           height:80vh;
+           overflow: hidden;
+           border-radius: 5px;
+          }
+   
+   
+          .slick .card::after {
+           content: '';
+           position: absolute;
+           left: 0;
+           top: 0;
+           z-index: 900;
+           display: block;
+           width: 100%;
+           height: 100%;
+          }
+   
+         .slick .card_part {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 7;
+          display: flex;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          background-size:cover;
+          transform: translateX( 700px );
+          background-image: url("https://i.ibb.co/qDfqrrK/04.webp");
+          background-repeat:no-repeat;
+          animation: opaqTransition 28s cubic-bezier(0, 0, 0, 0.97) infinite;
+          }
+   
+   
+         .slick .card_part.card_part-two {
+          z-index: 6;
+          background-image: url("https://i.ibb.co/qDfqrrK/04.webp");
+          animation-delay: 7s;
+          background-repeat:no-repeat;
+         }
+   
+         .slick .card_part.card_part-three {
+          z-index: 5;
+          background-image: url("https://i.ibb.co/qDfqrrK/04.webp");
+          animation-delay: 14s;
+          background-repeat:no-repeat;
+          }
+   
+         .slick .card_part.card_part-four {
+          z-index: 4;
+          background-image: url("https://i.ibb.co/qDfqrrK/04.webp");
+          animation-delay: 21s;
+          background-repeat:no-repeat;
+          }
+   
+   
+         @keyframes opaqTransition {
+          3% { transform: translateX( 0 ); }
+          25% { transform: translateX( 0 ); }
+          28% { transform: translateX( -700px ); }
+          100% { transform: translateX( -700px ); }
+          }
+          
+          
+          @media (max-width:600px){
+          .slick{
+       width:100%;
+       margin-left:auto;
+       margin-right:auto;
+       }
+          .slick table td{
+          width:95%;
+          display:block;
+          padding:0%;
+          }
+          .slick table td ul{
+          width:85%;
+          }
+          .slick table td:nth-child(1) ul{
+       text-align:left;
+       }
+       .slick .card {
+           position: relative;
+           width: 60%;
+           height:50vh;
+           overflow: hidden;
+           border-radius: 5px;
+          }
+          }
+          
+          @media (max-width:500px){
+          .slick table td{
+          width:100%;
+          display:block;
+          }
+          .slick table td:nth-child(1) ul{
+       text-align:left;
+       }
+       .title{
+       font-size:1.3em;
+       }
+       .sub-title{
+       font-size:0.6em;
+       }
+       .slick table td ul li{
+       padding:5px 0px;
+       }
+          }
+          
+          
+   
+   .section1{
+   width:100%;
+   margin: 0;
+   background-color: rgb(22, 20, 20);
+   
+   }
+   .section1 .accordion-item {
+     background-color: white;
+     border-radius: .1rem;
+     margin-bottom: .5rem;
+     padding: 0.5rem;
+     box-shadow: .3rem 2px .3rem black;
+     box-sizing: border-box;
+     width:95%;
+    
+   }
+   .section1 .accordion-link {
+     font-size: 1rem;
+     color: black;
+     text-decoration: none;
+     background-color: rgb(247, 247, 241);
+     width: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 0.01rem 0;
+   }
+   .accordion-link i{
+     color: rgb(8, 4, 4);
+     padding: .4rem;
+   }
+   .accordion-link .ion-md-remove{
+     display: none;
+   }
+   .answer{
+     max-height: 0;
+     overflow: hidden;
+     position: relative;
+     color: #000;
+     transition: max-height 650ms;
+   
+   }
+   .answer::before{
+         content: "";
+         position: absolute;
+         width: .6rem;
+         height: 90%;
+         top:50%;
+         left: 0;
+         transform: translateY(-50%);
+   }
+   .answer p{
+     font-size: 0.8rem;
+     color:#181f1e;
+     padding:2rem;
+   }
+   .accordion-item:target .answer{
+     max-height: 4rem;
+   }
+   .section1 .panel img{
+   margin:0px 20px;
+   }
+   
+   .section1 .active,.section1 .accordion:hover {
+     background-color: #ccc;
+   }
+   .accordion-item .accordion-link .ion-md-add{
+      display: none;
+   }
+   .accordion-item .accordion-link .ion-md-add{
+      display: block; 
+   }
+   
+    @media (max-width:600px){
+    .section1 .banner{
+    width:90%;
+    }
+    }
+   
+   /*FOOTER*/
+   .footer{
+   width:100%;
+   background-color: black;
+   background-size:100% 100%;
+   padding:20px 0px;
+   box-shadow: 0 4px 8px 0 white;
+   }
+   
+   .footer section{
+   width:20%;
+   padding:2%;
+   display:inline-block;
+   }
+   
+   
+   
+   .footer img{
+   width:200px;
+   height:80px;
+   font-size:2em;
+   }
+   
+   .footer p{
+   font-size:12px;
+   color:#fff;
+   }
+   
+   .footer section .title{
+   color:#fff;
+   font-size:1em;
+   }
+   
+   .footer section .title:before{
+   content:"";
+   }
+   
+   .footer section a{
+   text-decoration:none;
+   color:#fff;
+   font-size:14px;
+   transition:0.5s;
+   }
+   
+   .footer section a:hover{
+   color:#a49e59;
+   }
+   
+   .footer section input{
+   width:70%;
+   border:0;
+   outline:none;
+   height:30px;
+   padding:5px;
+   }
+   
+   .footer section button{
+   width:50px;
+   height:40px;
+   padding:10px 5px;
+   outline:none;
+   border:0;
+   background:#CCCCCC;
+   color:#000102;
+   }
+   
+   .footer section .fa-map-marker,.footer section .fa-phone,.footer section .fa-envelope{
+   font-size:23px;
+   margin:10px;
+   transition:0.5s;
+   }
+   
+   .footer section i:hover{
+   color:#fff;
+   }
+   
+   .sub-footer{
+   background:#1e1e1e;
+   text-align:center;
+   font-size:14px;
+   color:gray;
+   padding:10px 0px;
+   }
+   @media (max-width:600px){
+   .footer section{
+   display:block;
+   width:90%;
+   }
+   .footer section:nth-child(2),.footer section:nth-child(3){
+   width:40%;
+   display:inline-block;
+   margin:2%;
+   }
+   }
+   .footer titles{
+     box-shadow: 0 12px 15px 0 rgba(199, 238, 25, 0.24);
+   }
+   
+   
+   
+   
+   /*ABOUT US*/
+   .header_aboutus{
+   width:100%;
+   height:40vh;
+   background-image:url("../images/aboutus_header.webp");
+   background-size:cover;
+   background-attachment:fixed;
+   text-align:center;
+   color:#fff;
+   }
+   
+   .header_aboutus .title{
+   position:relative;
+   top:15vh;
+   }
+   
+   .header_aboutus .sub-title{
+   position:relative;
+   top:20vh;
+   color:#f7f7f7;
+   }
+   
+   .header_aboutus .sub-title a{
+   color:#fff;
+   }
+   
+   
+   
+   :root {
+   --rose1: linear-gradient(to right,#E50091,#AE0D97);
+   --rose2: linear-gradient(to right,#D219B4,#E50091);
+   --blue1: linear-gradient(to right,#3b29cf,#4267D9);
+   --blue2: linear-gradient(to right,#4267D9,#17B1EF);
+   --green1: linear-gradient(to right,#42c966,#5BD80B);
+   --green2: linear-gradient(to right,#04E2CB,#42c966);
+   --orange1: linear-gradient(to right,#E03C30,#FF7125);
+   --orange2: linear-gradient(to right,#FF7125,#EFBC2F);
+   }
+   
+   
+   .container-fluid{
+    background:#f7f7f7;
+    padding:5% 0%;
+   }
+   
+   
+   
+   @media screen and (max-width:567px){
+       .main-timeline .title{ font-size: 18px; }
+       .main-timeline{
+       font-family: sans-serif;
+       position: relative;
+       width:75%;
+       margin:auto;
+   }
+   }
+   
+   /*CONTACT FORM*/
+   .container .contact_details{
+   width:90%;
+   margin:auto;
+   }
+   
+   .container .contact_details td{
+   text-align:center;
+   }
+   
+   .contact form{
+   width:60%;
+   margin:auto;
+   }
+   .contact form input,.contact form textarea {
+     border: 0;
+     outline: 0;
+     font-size: 16px;
+     border-radius: 320px;
+     padding: 16px;
+     background-color: #EBECF0;
+     text-shadow: 1px 1px 0 #FFF;
+     margin-top:2%;
+   }
+   .contact form input,.contact form textarea {
+     margin-right: 8px;
+     box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
+     width: 100%;
+     box-sizing: border-box;
+     transition: all 0.2s ease-in-out;
+     appearance: none;
+     -webkit-appearance: none;
+     resize:none;
+   }
+   .contact form input:focus {
+     box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+   }
+   
+   .contact form button {
+       color: #0f1c48;
+       font-weight: bold;
+       box-shadow: -5px -5px 20px #FFF, 5px 5px 20px #BABECC;
+       transition: all 0.2s ease-in-out;
+       cursor: pointer;
+       font-weight: 600;
+           border: 0;
+       outline: 0;
+       font-size: 16px;
+       border-radius: 320px;
+       padding: 16px;
+       background-color: #EBECF0;
+       width:50%;
+       margin-top:2%;
+     
+   }
+   .contact form button:hover {
+     box-shadow: -2px -2px 5px #FFF, 2px 2px 5px #BABECC;
+     color:#fff;
+   }
+   .contact form button:active {
+     box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+   }
+   
+   
+   
+   .credits{
+     background:#1e1e1e;
+     color:gray;
+     font-size:13px;
+     padding:10px;
+     position:fixed;
+     right:0;
+     bottom:20px;
+   }
+   
+   @import url(https://fonts.googleapis.com/css?family=Raleway);
+   
+   body {
+     color: #333;
+     background: #fcfcfc;
+     font-family: 'Raleway', sans-serif;
+     overflow-x: hidden;
+   }
+   
+   .faq-header{
+     font-size: 20px;
+     padding: 24px;
+     color:white;
+   }
+   
+   .faq-content {
+     margin: 0 auto;
+     color:white;
+   }
+   
+   .faq-question {
+     padding: 16px 0;
+   
+   }
+   
+   .panel-title {
+     font-size: 16px;
+     width: 100%;
+     position: relative;
+     margin: 0;
+     padding: 10px 10px 0 48px;
+     display: block;
+     cursor: pointer;
+   }
+   
+   .panel-content {
+     font-size: 20px;
+     padding: 0px 14px;
+     margin: 0 40px;
+     height: 0;
+     overflow: hidden;
+     z-index: -1;
+     position: relative;
+     opacity: 0;
+     -webkit-transition: .4s ease;
+     -moz-transition: .4s ease;
+     -o-transition: .4s ease;
+     transition: .4s ease;
+   }
+   
+   .panel:checked ~ .panel-content{
+     height: auto;
+     opacity: 1;
+     padding: 14px;
+   }
+   
+   .plus {
+     position: absolute;
+     margin-left: 20px;
+     margin-top: 4px;
+     z-index: 5;
+     font-size: 42px;
+     line-height: 100%;
+     -webkit-user-select: none;    
+     -moz-user-select: none;
+     -ms-user-select: none;
+     -o-user-select: none;
+     user-select: none;
+     -webkit-transition: .2s ease;
+     -moz-transition: .2s ease;
+     -o-transition: .2s ease;
+     transition: .2s ease;
+   }
+   
+   .panel:checked ~ .plus {
+     -webkit-transform: rotate(45deg);
+     -moz-transform: rotate(45deg);
+     -o-transform: rotate(45deg);
+     transform: rotate(45deg);
+   }
+   
+   .panel {
+     display: none;
+   }
+   .carol{
+     margin: 0;
+     background-color: rgb(255, 255, 255);
+   }
+   * {
+     box-sizing: border-box;
+   }
+   
+   .column {
+     float: left;
+     width: 33.33%;
+     padding: 5px;
+    /* background-image:url(../../assets/images/red.png);*/
+     background-size: 2000px;
+     
+     
+   }
+   
+   /* Clearfix (clear floats) */
+   .row::after {
+     content: "";
+     clear: both;
+     display: table;
+     text-align: center;
+    /*  background-color: rgb(179, 15, 15);*/
+   }
+   .column p{
+     font-size:16px;
+     color:rgb(10, 5, 5);
+     font:bold;
+     text-align: center;
+     box-shadow: 0 8px 16px 0 rgb(255, 2, 2);
+     }
+    
+   /*teams*/
+   .colum {
+     float: right;
+     width: 29%;
+     padding: 5px;
+     text-align: center;
+     
+   }
+   
+   /* Clearfix (clear floats) */
+   .roww::after {
+     content: "";
+     clear: both;
+     display: table;
+     text-align: center;
+     
+    /*  background-color: rgb(179, 15, 15);*/
+   }
+   .colum p{
+     font-size:16px;
+     color:rgb(14, 12, 12);
+     font:bold;
+     text-align: center;
+    
+     }
+     h1{
+       text-align: center;
+       color:rgb(14, 13, 13);
+     }
+     h3{
+       text-align: center;
+     }
+     .motlatso{
+       margin:0;
+       padding: 10px;
+       height:90vh;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       background-image:url(../../assets/images/red.png);
+       background-size: 2000px;
+       
+     }
+     .slider{
+       width:500px;
+       height: 500px;
+       border-radius: 10px;
+      overflow: hidden;
+     }
+     .slides{
+       width: 600%;
+       height: 500px;
+       display: flex;
+     }
+     .slides input{
+       display: none;
+     }
+     .slide{
+       width:20%;
+       transition: 2s;
+     }
+     .slide img{
+       width:500px;
+       height: 250px;
+       border-radius: 100%;
+     }
+     .navigation-manual{
+        position: absolute;
+        width:600px;
+        margin-top: -20px;
+        display: flex;
+        justify-content: center;
+     }
+     .manual-btn{
+       border: 2px solid rgb(241, 73, 73);
+       padding:5px;
+       border-radius: 20px;
+       cursor: pointer;
+       transition: 1s;
+       height: 300px;
+     }
+     .manual-btn:not(:last-child){
+       margin-right: 40px;
+     }
+     .manual-btn:hover{
+       background: rgb(241, 73, 73);
+     }
+     #radio1:checked~.first{
+       margin-left: 0;
+     }
+     #radio2:checked~.first{
+       margin-left: -20%;
+     }
+     #radio3:checked~.first{
+       margin-left: -40%;
+     }
+     #radio4:checked~.first{
+       margin-left: -60%;
+     }
+     #radio5:checked~.first{
+       margin-left: -80%;
+     }
+     #radio6:checked~.first{
+       margin-left: -100%;
+     }
+     #radio7:checked~.first{
+       margin-left: -120%;
+     }
+     #radio8:checked~.first{
+       margin-left: -140%;
+     }
+     #radio9:checked~.first{
+       margin-left: -160%;
+     }
+     #radio10:checked~.first{
+       margin-left: -180%;
+     }
+     #radio11:checked~.first{
+       margin-left: -200%;
+     }
+     .navigation-auto{
+       position: absolute;
+       display: flex;
+       width: 800px;
+       justify-content: center;
+       margin-top:460px ;
+   
+     }
+     .navigation-auto div{
+       border:2px solid transparent;
+       padding: 5px;
+       border-radius: 10px;
+       transition: 1s;
+     }
+     .navigation-auto div.manual-btn:not(:last-child){
+       margin-right: 40px;
+   
+     }
+     #radio1:checked~ .navigation-auto .auto-btn1{
+       background: rgb(241, 73, 73);
+     }
+     #radio2:checked~ .navigation-auto .auto-btn2{
+       background: rgb(241, 73, 73);
+     }
+     #radio3:checked~ .navigation-auto .auto-btn3{
+       background: rgb(241, 73, 73);
+     }
+     #radio4:checked~ .navigation-auto .auto-btn4{
+       background: rgb(241, 73, 73);
+     }
+     #radio5:checked~ .navigation-auto .auto-btn5{
+       background: rgb(241, 73, 73);
+     }
+     #radio6:checked~ .navigation-auto .auto-btn6{
+       background: rgb(241, 73, 73);
+     }
+     #radio7:checked~ .navigation-auto .auto-btn7{
+       background: rgb(241, 73, 73);
+     }
+     #radio8:checked~ .navigation-auto .auto-btn8{
+       background: rgb(241, 73, 73);
+     }
+     #radio9:checked~ .navigation-auto .auto-btn9{
+       background: rgb(241, 73, 73);
+     }
+     #radio10:checked~ .navigation-auto .auto-btn10{
+       background: rgb(241, 73, 73);
+     }
+     #radio11:checked~ .navigation-auto .auto-btn11{
+       background: rgb(241, 73, 73);
+     }
+     
+     h5{
+       font-size: 18px;
+     }
+     .author{
+       
+       color:white;
+       padding: right;
+       position: center;
+        top: 50%;
+       left: 50%;
+    
+     }
+     .author1{
+       
+       color:whitesmoke;
+       padding: left;
+     }
+     q{
+       color:whitesmoke;
+     }
+     @media only screen and (max-width: 480px) {
+     img {
+       width: 100%;
+     }
+   }
+   
+   </style>
+   mn
+   <!-- Toolbar -->
+   
+   <!--TITLE-->
+   <title>CampusNavigator</title>
+   
+   <!--ICON-->
+   <link rel="shortcut icon" href="../../assets/images/logo.png">
+   
+   <!--META TAGS-->
+   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+   <meta name="author" content="Mahesh">
+   <meta name="description" content="">
+   <meta name="keywords" content="">
+   <meta property="og:locale" content="en_US"/>
+   <meta property="og:url" content=""/>
+   <meta property="og:site_name" content="CampusNavigator"/>
+   
+   <!--EXTERNAL CSS-->
+   <!--<link rel="stylesheet" href="css/style.css">-->
+   <!--<link rel="stylesheet" href="css/custom.css">-->
+   <head>
+   <!--PLUGIN-->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+   
+   <!--FONT AWESOME-->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+   
+   <!--GOOGLE FONTS-->
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fredoka+One&family=Kanit:wght@300&display=swap" rel="stylesheet">  
+   </head>
+   <body>
+     <!--IF LOADER NEEDED
+   <body onload="myLoader()" style="margin:0;">
+   <div class="loading" id="loader">
+   <div class="load">
+   <div class="loader">
+   </div>
+   </div>
+   </div>
+   <div style="display:none;" id="myDiv" class="animate-bottom">-->
+   
+   
+   <!--NAV-BAR-->
+   <header>
+   <div class="topnav" id="myTopnav">
+     <div class="logo"><img src="../../assets/images/logo.png" width="60px" height="60px"></div>
+     <a class="logo">CampusNavigator</a>
+     <a href="#team"></a>
+     <a href="#team"></a>
+     <a href="#team"></a>
+     
+      <a href="/MAHESHBYL/details/mdOmWZG"></a>
+      <a href="#" class="active"></a>
+     <a href="#" class="active"></a>
+      
+     <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+   </div>
+   </header>
+   <div id="navbar">
+   <div class="slide-menu">
+     <a class="logo">CampusNavigator</a>
+     <a href="#team"></a>
+     <a href="#team"></a>
+     <a href="#Services"></a>
+     
+      <a href="#team"></a>
+     <a href="about.html"></a>
+      <a href="#" class="active"></a>
+   </div>
+   </div>
+   
+   
+   
+   <!--MAIN-->
+   <div class="main">
+   <table>
+   <tr>
+   <td>
+   <section>
+   <h5 class="sub-title"></h5>
+   <h5><b>Welcome To Campus Navigator</b></h5>
+   <h5>With Us You Are Never Lost </h5>
+   <h5><b>For Easy Access And Navigation</b> <br> <b>To All Tshwane University Of Technology Campuses</b></h5>
+   <a routerLink="/body" class="btn1">Login</a>
+   </section>
+   </td>
+   <td>
+   <img src="7.jpg" class="inline-photo show-on-scroll" alt="INFERNO">
+   </td>
+   </tr>
+   </table>
+   </div>
+   
+   <div class="carol">
+     <p>The campus navigator is a mobile application which is basically used for navigating routes inside any campus premises <br>
+        This web application is accessible to anyone who wants to access TUT Campuses.  It helps users with directions inside the campus.</p>
+   </div>
+   
+   <!--slideshow-->
+   
+   <section class="motlatso">
+     <div class="slider">
+       <div class="slides">
+         <input type="radio" name="radio-btn" id="radio1">
+         <input type="radio" name="radio-btn" id="radio2">
+         <input type="radio" name="radio-btn" id="radio3">
+         <input type="radio" name="radio-btn" id="radio4">
+         <input type="radio" name="radio-btn" id="radio5">
+         <input type="radio" name="radio-btn" id="radio6">
+         <input type="radio" name="radio-btn" id="radio7">
+         <input type="radio" name="radio-btn" id="radio8">
+         <input type="radio" name="radio-btn" id="radio9">
+         <input type="radio" name="radio-btn" id="radio10">
+         <input type="radio" name="radio-btn" id="radio11">
+  
+   
+       <div class="slide first">
+        
+        <p class="author"></p>
+        <p class="author1"></p>
+        
+       </div>
+       <div class="slide">
+        <img src="../../assets/images/kamo.jpg" style="width:60%" height="70%">
+        <p class="author"><b>K Mabelane</b></p>
+        <p class="author1">Scrum Master</p>
+        <q>Responsible for daily scrum, <br>sprint planning, <br>sprint review, and <br>sprint retrospective</q>
+       </div>
+  
+       <div class="slide"> 
+         <img src="../../assets/images/thando.jpg" style="width:40%" height="50%">
+              <p class="author"><b>T Magagula</b></p>
+         <p class="author1">Software Developer</p>
+         <q>Web application developer</q> 
+       </div>
+       <div class="slide">
+         <img src="../../assets/images/advovo.jpeg" style="width:40%" height="50%">
+         <p class="author"><b>A Manganyi</b></p>
+         <p class="author1">Multimedia</p>
+         <q>environment and stuff</q>  
+       </div>
+       <div class="slide">
+         <img src="../../assets/images/mapula.jpg" style="width:40%" height="50%">
+         <p class="author"><b>S Mmetle</b></p>
+         <p class="author1">Business Analyst</p>
+         <q>Collect and record data</q>  
+       </div>
+       <div class="slide">
+        <img src="../../assets/images/carol.jpg" style="width:40%" height="50%">
+        <p class="author"><b>M Mashatola</b></p>
+        <p class="author1">Software Developer</p>
+        <q>Collect and record data</q>  
+       </div>
+      <div class="slide">
+        <img src="../../assets/images/vanessa.jpg" style="width:40%" height="50%">
+        <p class="author"><b>V Maluleka</b></p>
+        <p class="author1">Software Developer</p>
+        <q>Collect and record data</q>  
+      </div>
+      <div class="slide">
+        <img src="../../assets/images/matima.jpeg" style="width:40%" height="50%">
+        <p class="author"><b>M Matima</b></p>
+        <p class="author1">Developer</p>
+        <q>Collect and record data</q>  
+      </div>
+      <div class="slide">
+        <img src="../../assets/images/Zinhle.jpg" style="width:40%" height="50%">
+        <p class="author"><b>Z Makubu</b></p>
+        <p class="author1">Business Analyst</p>
+        <q>Collect and record data</q>  
+      </div>
+      <div class="slide">
+        <img src="../../assets/images/masindi.jpg" style="width:40%" height="50%">
+        <p class="author"><b>M Mukwevho</b></p>
+        <p class="author1">Software Developer</p>
+        <q>Develops Software</q>  
+      </div>
+      <div class="slide">
+        <img src="../../assets/images/elvis.jpg" style="width:40%" height="50%">
+        <p class="author"><b>E Thabethe</b></p>
+        <p class="author1">Business Analyst</p>
+        <q>Collect and record data</q>  
+      </div>
+       <!--slide images end-->
+       <!--automatic navigation start-->
+       <div class="navigation-auto">
+         <div class="auto-btn1"></div>
+         <div class="auto-btn2"></div>
+         <div class="auto-btn3"></div>
+         <div class="auto-btn4"></div>
+         <div class="auto-btn5"></div>
+         <div class="auto-btn6"></div>
+         <div class="auto-btn7"></div>
+         <div class="auto-btn8"></div>
+         <div class="auto-btn9"></div>
+         <div class="auto-btn10"></div>
+         <div class="auto-btn11"></div>
+       </div>
+       </div>
+        <!--manual navigation start-->
+        <div class="navigation-manual"></div>
+        <label for="radio1" class="manual-btn"></label>
+        <label for="radio2" class="manual-btn"></label>
+        <label for="radio3" class="manual-btn"></label>
+        <label for="radio4" class="manual-btn"></label>
+        <label for="radio5" class="manual-btn"></label>
+        <label for="radio6" class="manual-btn"></label>
+        <label for="radio7" class="manual-btn"></label>
+        <label for="radio8" class="manual-btn"></label>
+        <label for="radio9" class="manual-btn"></label>
+        <label for="radio10" class="manual-btn"></label>
+        <label for="radio11" class="manual-btn"></label>
+       <!--automatic navigation end-->
+   
+       
+         
+      </div>
+     <!--image slider end-->
+     <script type="text/javascript">
+       var counter =1;
+       setInterval(function(){
+         document.getElementById('radio' + counter).checked = true;
+         counter++;
+         if(counter > 11){
+           counter =1;
+         }
+       }), 5000;
+     </script>
+   </section>
+   <!--our campuses-->
+   <h1>Our campuses</h1>
+   
+   
+   <div class="row">
+     <div class="column">
+       <p><b>Tshwane South Campus</b></p>
+       <img src="../../assets/images/sosha.jpg" width="430px" height="300px">
+       
+     </div>
+     <div class="column">
+       <p><b>Tshwane North Campus</b></p>
+       <img src="../../assets/images/northsosha.jpg" width="430px" height="300px">
+     </div>
+     <div class="column">
+       <p><b>Emalahleni Campus</b></p>
+       <img src="../../assets/images/emalahleni.jpg" width="430px" height="300px">
+     </div>
+    <div class="row">
+     <div class="column">
+       <p><b>Ga-Rankuwa Campus</b></p>
+       <img src="../../assets/images/rankuwa.jpg" width="430px" height="300px">
+     </div>
+     <div class="column">
+       <p><b>Arcadia Campus</b></p>
+       <img src="../../assets/images/arcadia.jpg" width="430px" height="300px">
+     </div>
+     <div class="column">
+       <p><b>Mbombela Campus</b></p>
+       <img src="../../assets/images/mbombela.jpg" width="430px" height="300px">
+     </div>
+     <div class="column">
+       <p><b>Arts Campus</b></p>
+       <img src="../../assets/images/arts.jpg" width="430px" height="300px">
+     </div>
+     <div class="column">
+       <p><b>Polokwane Campus</b></p>
+       <img src="../../assets/images/polokwane.jpg" width="430px" height="300px">
+     </div>
+     <div class="column">
+       <p><b>Pretoria Campus</b></p>
+       <img src="../../assets/images/pretoria.jpeg" width="430px" height="300px">
+     </div>
+     
+    </div> 
+   <!--our teams-->
+   <!--CARDS-->
+   <!--teams-->
+   
+     <!--teams-->
+     <!--ion icons-->
+     <link href="https://unpkg.com/ionicons@4.5.10.0/dist/css/ionicons.min.css" rel="stylesheet">
+   <section class="section1">
+   <div class="faq-header">Frequently Asked Questions</div>
+   
+   <div class="faq-content">
+     <div class="faq-question">
+       <div class="accordion-item" id="question1">
+           <a class="accordion-link" href="#question1">
+             Can I access the web application from anywhere?
+             <i class="icon ion-md-add"></i>
+             <i class="icon ion-md-remove  "></i>
+           </a>
+           <div class="answer">
+             <p>yes</p>
+           </div>
+       </div>
+       <div class="accordion-item" id="question2">
+         <a class="accordion-link" href="#question2">
+           Can I access the web application from anywhere?
+           <i class="icon ion-md-add"></i>
+           <i class="icon ion-md-remove  "></i>
+         </a>
+         <div class="answer">
+           <p>yes</p>
+         </div>
+     </div>
+     <div class="accordion-item" id="question3">
+       <a class="accordion-link" href="#question3">
+         Can I access the web application from anywhere?
+         <i class="icon ion-md-add"></i>
+         <i class="icon ion-md-remove  "></i>
+       </a>
+       <div class="answer">
+         <p>yes</p>
+       </div>
+   </div>
+   <div class="accordion-item" id="question4">
+     <a class="accordion-link" href="#question4">
+       Can I access the web application from anywhere?
+       <i class="icon ion-md-add"></i>
+       <i class="icon ion-md-remove  "></i>
+     </a>
+     <div class="answer">
+       <p>yes</p>
+     </div>
+   </div>
+     </div>
+   </div>
+   
+   </section>
+     
+     <!--our team-->
+     
+        <h1>Our Team</h1>
+      <h3>Meet Our Great Team</h3>
+   
+   <div class="roww">
+     <div class="colum">
+       
+       <img src="../../assets/images/kamo.jpg" width="300px" height="250px">
+       <p><b>K Mabelane</b></p>
+     </div>
+     <div class="colum">
+      
+       <img src="../../assets/images/thando.jpg" width="300px" height="250px">
+       <p><b>T Magagula</b></p>
+     </div>
+     <div class="colum">
+       
+       <img src="../../assets/images/advovo.jpeg" width="300px" height="250px">
+       <p><b>A Manganyi</b></p>
+     </div>
+    <div class="row">
+     <div class="colum">
+       
+       <img src="../../assets/images/mapula.jpg" width="300px" height="250px">
+       <p><b>S Mmetle</b></p>
+     </div>
+     <div class="colum">
+       
+       <img src="../../assets/images/carol.jpg" width="300px" height="250px">
+       <p><b>M Mashatola</b></p>
+     </div>
+     <div class="colum">
+       
+       <img src="../../assets/images/vanessa.jpg" width="300px" height="250px">
+       <p><b>V Maluleka</b></p>
+     </div>
+     <div class="colum">
+      
+       <img src="../../assets/images/matima.jpeg" width="300px" height="250px">
+       <p><b>M Matima</b></p>
+     </div>
+     <div class="colum">
+       
+       <img src="../../assets/images/Zinhle.jpg" width="300px" height="250px">
+       <p><b>Z Makubu</b></p>
+     </div>
+     <div class="colum">
+       
+       <img src="../../assets/images/richard.jpeg" width="300px" height="250px">
+       <p><b>R Sithole</b></p>
+     </div>
+     
+     <div class="colum">
+       
+      <img src="../../assets/images/masindi.jpg" width="300px" height="250px">
+      <p><b>M Mukwevho</b></p>
+    </div>
+  
+    <div class="colum">
+       
+      <img src="../../assets/images/elvis.jpg" width="300px" height="250px">
+      <p><b>E Thabethe</b></p>
+    </div>
+     
+    </div> 
+   
+   
+     <!--our team-->
+     
+   <!--FOOTER-->
+   <footer>
+   <div class="footer">
+   <section>
+   <p class="title">CampusGuide</p>
+   <p>Our offices are situated in Soshanguve</p>
+   <p>2 Aubrey Matlala Street<br> Pretoria, South Africa</p>
+   <p>Phone: 0812345678 <br> Email: campusguide@gmail.com</p>
+   </section>
+   
+   <section>
+   <p class="title">Useful Links</p>
+   <p><a href="#">signIn</a></p>
+   <p><a href="#">signUp</a></p>
+   <p><a href="#">Our Services</a></p>
+   <p><a href="#">Gallery</a></p>
+   <p><a href="#">Our Campuses</a></p>
+   <p><a href="#">About Us</a></p>
+   
+   </section>
+   
+   <section>
+   <p class="title">Our Services</p>
+   <p>Web Design</p>
+   <p>Web Development</p>
+   <p>Business Analysis</p>
+   <p>Graphic Design</p>
+   </section>
+   
+   <section>
+   <p class="title">Our Newsetter</p>
+   <p>To recieve news updates subscribe below</p>
+   <p><input type="email"placeholder="Email*" required><button type="submit"><i class="fa fa-paper-plane"></i></button></p>
+   <p><a title="Address, Country, Pincode"><i class="fa fa-map-marker"></i></a> <a href="#"><i class="fa fa-phone"></i></a> <a href="#"><i class="fa fa-envelope"></i></a></p>
+   </section>
+   </div>
+   <div class="sub-footer">
+   Copyright © 2022 CampusGuide. All Rights Reserved || Designed By: TUT ICEP Interns
+   </div>
+   </footer>
+   <div>
+   
+   <a href="#" id="scroll-up"><i class="fa fa-angle-up"></i></a>
+   </div>
+   
+   <!--JAVASCRIPT-->
+   <script src="js/custom.js"></script>
+     
+   <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+   <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+   <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+   <!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+   <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+   <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+   <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+   
+   <router-outlet></router-outlet>
+   
