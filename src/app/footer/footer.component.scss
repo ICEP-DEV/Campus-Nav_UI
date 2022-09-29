@@ -1,0 +1,114 @@
+/*FOOTER*/
+.footer{
+    width:100%;
+    background-color: black;
+    background-size:100% 100%;
+    padding:20px 0px;
+    box-shadow: 0 4px 8px 0 whitesmoke;
+    }
+    
+    .footer section{
+    width:20%;
+    padding:2%;
+    display:inline-block;
+    }
+    
+    
+    
+    .footer img{
+    width:200px;
+    height:80px;
+    font-size:2em;
+    }
+    
+    .footer p{
+    font-size:12px;
+    color:#fff;
+    }
+    
+    .footer section .title{
+    color:#fff;
+    font-size:1em;
+    }
+    
+    .footer section .title:before{
+    content:"";
+    }
+    
+    .footer section a{
+    text-decoration:none;
+    color:#fff;
+    font-size:14px;
+    transition:0.5s;
+    }
+    
+    .footer section a:hover{
+    color:#a49e59;
+    }
+    
+    .footer section input{
+    width:70%;
+    border:0;
+    outline:none;
+    height:30px;
+    padding:5px;
+    }
+    
+    .footer section button{
+    width:50px;
+    height:40px;
+    padding:10px 5px;
+    outline:none;
+    border:0;
+    background:lightgrey;
+    color:#000102;
+    }
+    
+    .footer section .fa-map-marker,.footer section .fa-phone,.footer section .fa-envelope{
+    font-size:23px;
+    margin:10px;
+    transition:0.5s;
+    }
+    
+    .footer section i:hover{
+    color:#fff;
+    }
+    
+    .sub-footer{
+    background:#1e1e1e;
+    text-align:center;
+    font-size:10px;
+    color:gray;
+    padding:10px 0px;
+    }
+    @media (max-width:900px){
+    .footer section{
+    display:block;
+    width:90%;
+    }
+    .footer section:nth-child(2),.footer section:nth-child(3){
+    width:50%;
+    display:inline-block;
+    margin:auto;
+    }
+    }
+ section .title
+    {
+  
+    font-weight: bold;
+   font-size:2em;
+      line-height: 1.5;
+    text-decoration: underline;
+    text-decoration-thickness:3px ;
+    grid-gap: 50px;
+     
+    }
+    .guides
+    {
+   background-color: rgb(126, 117, 117);
+opacity: 1;
+  width:100%;
+  height: 220px;
+  
+    }
+    
