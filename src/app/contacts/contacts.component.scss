@@ -1,0 +1,99 @@
+.btn
+{
+    border: 2px solid black;
+    padding:5px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 1s;
+    height: 35px;
+    width: 150px;
+    color: white;
+    background-color: black;
+}
+.font-weight-bold 
+{
+    text-underline-position:below;
+    // text-decoration-line:underline ;
+    // text-decoration-color: red;
+    font-size: larger;
+    text-align: center;
+    font-size: 30px;
+}
+body
+{
+    margin-top:20px;
+    background-color:#f2f6fc;
+    color:#69707a;
+    }
+    .img-account-profile {
+        height: 10rem;
+    }
+    .rounded-circle {
+        border-radius: 50% !important;
+    }
+    .card {
+        box-shadow: 0 0.15rem 1.75rem 0 rgb(33 40 50 / 15%);
+        border: 3px solid black;
+    }
+    .card .card-header {
+        font-weight: 500;
+    }
+    .card-header:first-child {
+        border-radius: 0.35rem 0.35rem 0 0;
+    }
+    .card-header {
+        padding: 1rem 1.35rem;
+        margin-bottom: 0;
+        background-color: rgba(33, 40, 50, 0.03);
+        border-bottom: 6px solid rgba(33, 40, 50, 0.125);
+    }
+    .form-control, .dataTable-input {
+        display: block;
+        width: 100%;
+        padding: 0.875rem 1.125rem;
+        font-size: 0.875rem;
+        font-weight: 400;
+        line-height: 1;
+        color: black;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 3px solid black;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border-radius: 0.35rem;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+    
+    .nav-borders .nav-link.active {
+        color: #0061f2;
+        border-bottom-color: #0061f2;
+    }
+    .nav-borders .nav-link {
+        color: black;
+        border-bottom-width: 0.125rem;
+        border-bottom-style: solid;
+        border-bottom-color: transparent;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 1rem;
+        margin-right: 1rem;
+       
+    }
+    h3{
+        
+    text-underline-position:below;
+    // text-decoration-line:underline ;
+    // text-decoration-color: red;
+    font-size: larger;
+    text-align: center;
+    font-size: 35px;
+    }
+    .map-container-section
+    {
+        border: 3px solid black;
+    }
+    
+    

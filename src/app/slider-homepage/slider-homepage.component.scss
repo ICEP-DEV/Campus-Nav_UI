@@ -1,0 +1,252 @@
+.mySlides {display:none;}
+body {
+
+font-family: Helvetica, sans-serif;
+
+text-align: center;
+font-size: 50;
+color: white;
+}
+
+/* Styling the area of the slides */
+#slideshow {
+overflow: hidden;
+height: 700px;
+width: 1500px;
+margin: 0 auto;
+}
+
+/* Style each of the sides
+with a fixed width and height */
+.slide {
+float: left;
+height: 700px;
+width:1500px;
+align-items: center;
+justify-items: center;
+display: flex;
+text-align: center;
+}
+
+
+
+/* Add animation to the slides */
+.slide-wrapper {
+
+/* Calculate the total width on the
+basis of number of slides */
+width: calc(1500px * 4);
+
+/* Specify the animation with the
+duration and speed */
+animation: slide 40s none;
+transition: 0.14s;
+
+
+}
+
+/*Set the background color
+of each of the slides */
+.slide:nth-child(1) {
+    background-image: url('../../assets/pin3.jpg');
+}
+
+.slide:nth-child(2) {
+    background-image: url('../../assets/pin3.jpg');
+}
+
+.slide:nth-child(3) {
+    background-image: url('../../assets/pin3.jpg');
+}
+
+.slide:nth-child(4) {
+    background-image: url('../../assets/pin3.jpg');
+}
+
+/* Define the animation
+for the slideshow */
+@keyframes slide {
+
+/* Calculate the margin-left for
+each of the slides */
+20% {
+	margin-left: 0px;
+}
+
+40% {
+	margin-left: calc(-1500px * 1);
+}
+
+60% {
+	margin-left: calc(-1500px * 2);
+}
+
+80% {
+	margin-left: calc(-1500px * 3);
+}
+}
+
+.blue_bt {
+    width: 255px;
+    height: 58px;
+    background: rgb(157, 7, 7);
+    color: #fff;
+    float: left;
+    text-align: center;
+    line-height: 58px;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.blue_bt:hover,
+.blue_bt:focus {
+    background: #fff;
+    color: rgb(157, 7, 7);
+}
+p 
+{
+    font-size: 18px;
+    font-weight: 300;
+    text-align: center;
+    margin-left: 80px;
+   
+}
+h2 span, h1 span {
+    color: #bd8cbf;
+}
+
+
+li {
+    list-style-type: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a
+{
+    transition: all .14s ease;
+}
+
+
+
+h4{
+    color: rgb(238, 11, 11);
+    margin-left: 57px;
+   
+   
+}
+h2{
+
+    margin-left: 45px;
+
+
+
+}
+
+@media screen and (max-width: 600px) {
+
+      
+    h2{
+        font-size: 12px;
+        
+       
+      
+    }
+
+    h4{
+        font-size: 12px;
+        
+      
+    }
+
+    p{
+        font-size: 10px;
+       
+
+    }
+
+    .blue_bt {
+        width: 100px;
+        height: 58px;
+        background: rgb(157, 7, 7);
+        color: #fff;
+        float: left;
+        text-align: center;
+        font-size: 15px;
+        font-weight: 300;
+        align-content: center;
+    }
+
+    #slideshow {
+        overflow: hidden;
+        height: 350px;
+        width: 500px;
+        margin: 0 auto;
+        }
+        
+        /* Style each of the sides
+        with a fixed width and height */
+        .slide {
+        float: left;
+        height: 350px;
+        width:500px;
+        align-items: center;
+        justify-items: center;
+        display: flex;
+        text-align: center;
+        overflow: hidden;
+        }
+        
+        .slide:nth-child(1) {
+            background-image: url('../../assets/pin3.jpg');
+            background-size: 500px;
+            width: 500px;
+            overflow: hidden;
+        }
+        
+        .slide:nth-child(2) {
+            background-image: url('../../assets/pin3.jpg');
+            background-size: 500px;
+            width: 500px;
+            overflow: hidden;
+        }
+        
+        .slide:nth-child(3) {
+            background-image: url('../../assets/pin3.jpg');
+            background-size: 500px;
+            width: 500px;
+            overflow: hidden;
+        }
+        
+        .slide:nth-child(4) {
+            background-image: url('../../assets/pin3.jpg');
+            background-size: 650px;
+            width: 500px;
+            overflow: hidden;
+        }
+
+        @keyframes slide {
+
+            /* Calculate the margin-left for
+            each of the slides */
+            20% {
+                margin-left: 0px;
+            }
+            
+            40% {
+                margin-left: calc(-500px * 1);
+            }
+            
+            60% {
+                margin-left: calc(-500px * 2);
+            }
+            
+            80% {
+                margin-left: calc(-500px * 3);
+            }
+            }
+        
+
+}

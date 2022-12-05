@@ -1,0 +1,156 @@
+
+<body >
+    
+  
+    <form > 
+    
+    <div class="login-wrap">
+        <div class="login-html">
+          <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Login</label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Register</label>
+            <div class="login-form">
+              
+<form #LoginForm ="ngForm" (ngSubmit)="OnLogin(LoginForm.value)">
+
+<!-- [formGroup]="loginForm" >  -->
+   
+  <div class="sign-in-htm " >
+      <div class="group">
+        
+        <!-- <i class="fa fa-user icon"></i> --> 
+          <label for="user" class="label"> Email</label> 
+          <input  type="email" class="input" id="user_email" name="user_email"   placeholder="Enter email" required ngModel> 
+        </div>
+<!-- 
+      <div>
+      <div *ngIf="user_email.touched && user_email.errors" class="errorMessage"></div> -->
+      <!-- <span *ngIf="user_email.hasError('required')" style="color: red; size: 17px;">Email is required</span>
+    </div> -->
+        
+      <div class="group">
+            <!--  <i class="fa fa-key icon"></i> --> 
+          <label for="pass" class="label"> Password</label>
+          <input type="password" class="input"  id="password" name="password" placeholder="Enter password" required ngModel> 
+          <!-- <div *ngIf="password.touched && password.errors" class="errorMessage"></div>
+          <span *ngIf="password.hasError('required')" style="color: red; size: 17px;">Password is required</span> -->
+        </div>
+      <!--<div class="group">
+          <input id="check" type="checkbox" class="check" checked>
+          <label for="check"><span class="icon"></span> Keep me Signed in</label>
+      </div> -->
+    
+      <div class="group">
+          <input type="submit" class="button" value="Login">
+          
+      </div>
+     
+      <div class="hr"></div>
+      <div class="foot-lnk">
+              <a href="#forgot">Forgot Password?</a>  <!--link needs to be provided-->
+      </div>
+</div>
+</form>
+
+          <form #registerForm ="ngForm" (ngSubmit)="onSubmit(registerForm.value)">
+             <!-- [formGroup]="signupForm"> -->
+               <!-- (ngSubmit)="onSubmit()" novalidate-->
+          <div class="sign-up-htm">
+                    
+
+              <div id="userID" class="group" >
+           
+                        <label  for="user" class="label">ID Number</label>
+                        <input type="text" class="input" id="user_id" placeholder="Enter ID Number " name="user_id" ngModel >
+                       
+                    </div>
+                 <!-- <div>
+                  <div *ngIf="user_id.touched && user_id.errors" class="errorMessage"></div>
+                  <span *ngIf="user_id.hasError('required')" style="color: red; size: 17px;">ID number is required is required</span>
+                  <span *ngIf="user_id.hasError('maxLength')" style="color: red; size: 17px;">ID number cannot have more 13 character</span>
+                  <span *ngIf="user_id.hasError('maxLength')" style="color: red; size: 17px;">ID number cannot have  13 character</span>
+                 </div> -->
+                    <div class="group">
+                        
+                        <label for="user" class="label">First Name</label>
+                        
+                        <input type="text" class="input" id="first_namee"  placeholder="Enter First Name" name="first_name" ngModel >
+                       </div>
+          <!-- <div>
+            <div *ngIf="first_name.touched && first_name.errors" class="errorMessage"></div>
+            <span *ngIf="first_name.hasError('required')" style="color: red; size: 17px;">Password is required</span>
+          </div> -->
+                    <div class="group">
+                      
+                            <!--     <i class="fa fa-user icon"></i>-->
+                        <label class="label">Last Name</label>
+                        <input type="text" class="input" id="last_name" placeholder="Enter Last Name" name="last_name" ngModel><br>
+                        
+                      </div>
+                      <!-- <div>
+                        <div *ngIf="first_name.touched && first_name.errors" class="errorMessage"></div>
+                        <span *ngIf="first_name.hasError('required')" style="color: red; size: 17px;">Password is required</span>
+                      </div> -->
+                
+                    <div class="group" >
+                        <label for="user" class="label">Gender</label>
+                        <select class="drop" id="gender"  name="gender" aria-label="select gender" ngModel>
+                            <option value="null">Select gender</option>
+                           <option value="student">Female</option>
+                            <option value="staff">Male</option>
+                        </select> 
+                        
+                    </div>
+                    <div class="group"  >
+                        <label for="user" class="label"> User Type</label>
+                        <select class="drop"  id="user_type"  name="user_type" aria-label="select gender" ngModel>
+                            <option value="null"> Select UserType</option>
+                           <option value="student">Student</option>
+                            <option value="staff">Staff</option>
+                             <option value="visiter">Visitor</option>
+                            </select>         
+                    </div>
+                    <div class="group">
+                        <label for="pass" class="label">Email Address</label>
+                         <!--   <i class="fa fa-user icon"></i> -->
+              <input type="email" class="input" id="user_email"  placeholder="Enter email " name="user_email" ngModel ><br>
+              <!-- <div *ngIf="user_email.touched && user_email.errors" class="errorMessage"></div>
+            <span *ngIf="user_email.hasError('required')" style="color: red; size: 17px;">Email is required</span>
+               -->
+                      </div>
+                    <div class="group">
+                        <label for="pass" class="label">Password</label>
+                        
+                       
+              <input type="password" class="input"  id="password" placeholder="Enter password" name="password" ngModel><br>
+              <!-- <div *ngIf="password.touched && password.errors" class="errorMessage"></div>
+              <span *ngIf="password.hasError('required')" style="color: red; size: 17px;">Password is required</span> -->
+
+                      </div>
+                    <!-- <div class="group">
+                        <label for="pass" class="label">Confirm Password</label>
+                        <input type="password" class="input"  id="confirm_pass" placeholder="dash@yk123" name="confirm_pass" [ngModel]="userModel.confirm_pass" [ngModelOptions]="{standalone: true}"> -->
+                        <!--    <i class="fa fa-lock icon"></i> 
+                    </div>
+                     -->
+                    
+                    <div class="group">
+                        <input type="submit" class="button"  value=" Register"> 
+                         <!-- link needs to be provided -->
+                         <br>
+                         <div class="hr"></div>
+                      <!-- <a routerLink="/login-reg" routerLinkActive="true">already have a account? Login</a> -->
+                    </div>
+                
+              
+                   
+                
+
+            </div>
+          </form>
+        </div>
+    </div>
+    </div>
+</form>
+</body>
+
+

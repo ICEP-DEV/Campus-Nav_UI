@@ -1,0 +1,137 @@
+<app-nav-bar></app-nav-bar>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Gallery</title>
+  
+</head>
+<body>
+    
+    
+    <section>
+        <h1>Our Gallery</h1>
+      <ul>
+        <li class="list active" data-filter="all">All</li>
+        <li class="list" data-filter="sosha">Sosha South</li>
+        <li class="list" data-filter="ptawest">Pretoria-West</li>
+        <li class="list" data-filter="polokwane">Polokwane</li>
+        <li class="list" data-filter="emalahleni">Emalahleni</li>
+    
+        <li class="list" data-filter="arcadia">Arcadia (Pretoria)</li>
+        
+        <li class="list" data-filter="arts">Arts (Pretoria)</li>
+    
+        
+        <li class="list" data-filter="mbombela">Mbombela</li>
+        <li class="list" data-filter="ga-rankowa">Ga-Rankowa</li>
+        <li class="list" data-filter="sosha_north">Sosha North</li>
+      </ul>
+
+      <div class="campus">
+     
+
+        <div class="itemBox" data-item="ptawest"><img src="../../assets/images/ptawest2.jpeg" alt=""></div>  
+      <div class="itemBox" data-item="sosha"><img src="../../assets/images/camp1.jpeg" alt=""></div> 
+      <div class="itemBox" data-item="sosha"><img src="../../assets/images/ruth (2).jpeg" alt=""></div>  
+      <div class="itemBox" data-item="emalahleni"><img src="../../assets/images/emalahleni1.jpeg" alt=""></div>  
+      <div class="itemBox" data-item="ptawest"><img src="../../assets/images/ptawest111.jpeg" alt=""></div>  
+      <div class="itemBox"data-item="sosha"><img src="../../assets/images/camp2.jpeg" alt=""></div>  
+      <div class="itemBox"data-item="sosha"><img src="../../assets/images/camp3.jpeg" alt=""></div> 
+      
+      <div class="itemBox"data-item="sosha"><img src="../../assets/images/t26.jpeg" alt=""></div> 
+      <div class="itemBox" data-item="arts"><img src="../../assets/images/arts1.jpeg" alt=""></div>  
+      <div class="itemBox" data-item="arcadia"><img src="../../assets/images/acardia1.jpeg" alt=""></div> 
+      
+      
+      <div class="itemBox"data-item="sosha"><img src="../../assets/images/t28.jpeg" alt=""></div>  
+      <div class="itemBox"data-item="sosha"><img src="../../assets/images/t3.jpeg" alt=""></div> 
+      
+      <div class="itemBox" data-item="sosha_north"><img src="../../assets/images/camp10.jpeg" alt=""></div>  
+      <div class="itemBox" data-item="mbombela"><img src="../../assets/images/mbo1.jpeg" alt=""></div>  
+      <div class="itemBox" data-item="sosha"><img src="../../assets/images/t22.jpeg" alt=""></div>  
+      <div class="itemBox" data-item="sosha"><img src="../../assets/images/t5.jpeg" alt=""></div>  
+      <div class="itemBox" data-item="sosha"><img src="../../assets/images/camp8.jpeg" alt=""></div> 
+     
+      <div class="itemBox" data-item="emalahleni"><img src="../../assets/images/emalahleni2.jpeg" alt=""></div> 
+      <div class="itemBox" data-item="arts"><img src="../../assets/images/arts2.jpeg" alt=""></div> 
+
+
+
+
+      <div class="itemBox" data-item="ptawest"><img src="../../assets/images/ptawest1.jpeg" alt=""></div>  
+
+
+
+
+      <div class="itemBox" data-item="ga-rankowa"><img src="../../assets/images/gaRa112.jpeg" alt=""></div> 
+     
+
+
+      <div class="itemBox" data-item="ptawest"><img src="../../assets/images/ptawest3.jpeg" alt=""></div>  
+
+
+      <div class="itemBox" data-item="sosha"><img src="../../assets/images/t7.jpeg" alt=""></div> 
+
+      <div class="itemBox" data-item="ptawest"><img src="../../assets/images/ptawest4.jpeg" alt=""></div>  
+      <div class="itemBox" data-item="mbombela"><img src="../../assets/images/mbo2.jpeg" alt=""></div>
+      <div class="itemBox" data-item="arts"><img src="../../assets/images/arts3.jpeg" alt=""></div> 
+      <div class="itemBox" data-item="emalahleni"><img src="../../assets/images/emalahleni3.jpeg" alt=""></div> 
+      <div class="itemBox" data-item="sosha"><img src="../../assets/images/t8.jpeg" alt=""></div> 
+      <div class="itemBox" data-item="ga-rankowa"><img src="../../assets/images/gaRa2.jpeg" alt=""></div>
+   
+      <div class="itemBox" data-item="ptawest"><img src="../../assets/images/ptawest5.jpeg" alt=""></div>
+      <div class="itemBox" data-item="arcadia"><img src="../../assets/images/acardia2.jpeg" alt=""></div> 
+      <div class="itemBox" data-item="arts"><img src="../../assets/images/arts4.jpeg" alt=""></div> 
+      <div class="itemBox" data-item="mbombela"><img src="../../assets/images/mbo3.jpeg" alt=""></div>
+      <div class="itemBox" data-item="ptawest"><img src="../../assets/images/ptawest6.jpeg" alt=""></div>
+      <div class="itemBox" data-item="ga-rankowa"><img src="../../assets/images/gaRa3.jpeg" alt=""></div>
+      <div class="itemBox" data-item="arcadia"><img src="../../assets/images/acardia3.jpeg" alt=""></div> 
+      <div class="itemBox" data-item="arcadia"><img src="../../assets/images/acardia4.jpeg" alt=""></div>
+      <div class="itemBox" data-item="emalahleni"><img src="../../assets/images/emalahleni4.jpeg" alt=""></div> 
+      <div class="itemBox" data-item="arts"><img src="../../assets/images/arts5.jpeg" alt=""></div> 
+      <div class="itemBox" data-item="mbombela"><img src="../../assets/images/mbo4.jpeg" alt=""></div>
+      
+  
+      </div>
+    </section>
+    <script>
+
+        let list = document.querySelectorAll('.list');
+        let itemBox = document.querySelectorAll('.itemBox');
+
+        for (let i= 0; i < list.length; i++) {
+           list[i].addEventListener('click',function(){
+            for (let j= 0; j < list.length; j++){
+                list[j].classList.remove('active')
+            }
+            this.classList.add('active'); 
+
+            let dataFilter = this.getAttribute('data-filter');
+
+            for (let k= 0; k < itemBox.length; k++){
+                itemBox[k].classList.remove('active');
+                itemBox[k].classList.add('hide');
+
+                if(itemBox[k].getAttribute('data-item') == dataFilter ||
+                dataFilter == "all") {
+                    itemBox[k].classList.remove('hide');
+                    itemBox[k].classList.add('active');
+
+                }
+
+            }
+        
+
+           })
+            
+        }
+        
+
+
+    </script>
+</body>
+
+
+</html>
+<app-footer></app-footer>

@@ -1,0 +1,481 @@
+
+.carol h2{
+    position: relative;
+      text-align: center;
+      color: #353535;
+      font-size: 30px;
+      font-family: "Cormorant Garamond", serif;
+    }
+    
+    .carol h1 {
+      position: relative;
+      text-align: center;
+      color: rgb(157, 7, 7);
+      font-size: 30px;
+      font-family: "Cormorant Garamond", serif;
+    }
+    
+    
+    .frame {
+      width: 90%;
+      margin: 40px auto;
+      text-align: center;
+    }
+    button {
+      margin: 20px;
+    }
+    .custom-btn {
+      width: 150px;
+      height: 80px;
+      color: #fff;
+      border-radius: 5px;
+      padding: 10px 25px;
+      font-family: 'Lato', sans-serif;
+      font-weight: 500;
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      display: inline-block;
+       box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+       7px 7px 20px 0px rgba(0,0,0,.1),
+       4px 4px 5px 0px rgba(0,0,0,.1);
+      outline: none;
+    }
+    
+    /* 1 */
+    .btn-1 {
+      background: black;
+      border: none;
+    }
+    .btn-1:hover {
+       background: rgb(157, 7, 7);
+    background: linear-gradient(0deg, rgb(157, 7, 7) 100%);
+    }
+    .btn-2 {
+      background: black;
+      border: none;
+    }
+    .btn-2:hover {
+       background: rgb(157, 7, 7);
+       background: linear-gradient(0deg, rgb(157, 7, 7) 100%);
+    }
+    .btn-3 {
+      background: black;
+      border: none;
+    }
+    .btn-3:hover {
+       background: rgb(157, 7, 7);
+       background: linear-gradient(0deg, rgb(157, 7, 7) 100%);
+    }
+    .btn-4{
+     background: black;
+      border: none;
+    }
+    .btn-4:hover {
+       background: rgb(157, 7, 7);
+       background: linear-gradient(0deg, rgb(157, 7, 7)100%);
+    }
+    .btn-5{
+      background: black;
+      border: none;
+    }
+    .btn-5:hover {
+       background: rgb(157, 7, 7);
+       background: linear-gradient(0deg, rgb(157, 7, 7) 100%);
+    }
+    .btn-6{
+      background: black;
+      border: none;
+    }
+    .btn-6:hover {
+       background: rgb(157, 7, 7);
+       background: linear-gradient(0deg, rgb(157, 7, 7) 100%);
+    }
+    .btn-7 {
+      background: black;
+      border: none;
+    }
+    .btn-7:hover {
+       background: rgb(157, 7, 7);
+       background: linear-gradient(0deg, rgb(157, 7, 7) 100%);
+    }
+    .btn-8 {
+      background: black;
+      border: none;
+    }
+    .btn-8:hover {
+       background: rgb(157, 7, 7);
+       background: linear-gradient(0deg, rgb(157, 7, 7) 100%);
+    }
+    .btn-9 {
+      background: black;
+      border: none;
+    }
+    .btn-9:hover {
+       background: rgb(157, 7, 7);
+       background: linear-gradient(0deg, rgb(157, 7, 7) 100%);
+    }
+    .carol{
+       height: 400px;
+       width:100%;
+       margin: 1px;
+       
+       
+       
+    }
+    .carol p{
+       text-align: center;
+        margin: 1px;
+    }
+    
+     
+     .section1 .accordion-link {
+       font-size: 1rem;
+       color: black;
+       text-decoration: none;
+       background-color: rgb(247, 247, 241);
+       width: 100%;
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       padding: 0.01rem 0;
+     }
+    
+     .section1 .panel img{
+     margin:0px 20px;
+     }
+     
+     .section1 .active,.section1 .accordion:hover {
+       background-color: #ccc;
+     }
+     .accordion-item .accordion-link .ion-md-add{
+        display: none;
+     }
+     .accordion-item .accordion-link .ion-md-add{
+        display: block; 
+     }
+     
+      @media (max-width:600px){
+      .section1 .banner{
+      width:90%;
+      }
+      }
+      .container-fluid{
+        
+        background-size: contain;
+      }
+      .w3-center1{
+        text-align: center;
+        font-size: 28px;
+      }
+  
+     
+     
+     
+     .hero-slider{
+       width:100%;
+    }
+    h3{
+      color: rgb(157, 7, 7);
+     }
+     .mash{
+      background-color: black;
+      height:10px;
+      width:100%;
+      }
+      .testimonial_blog {
+        background: black;
+        width: 100%;
+        padding: 40px 40px;
+        box-shadow: 15px 15px 0 0  rgb(157, 7, 7);
+        color: #fff;
+        margin-left: 10%;
+       
+    }
+    
+    .testimonial_blog p:first-child {
+        font-size: 30px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+    
+    p {
+        font-size: 17px;
+        font-weight: 300;
+    }
+    .hiw_section
+    {
+        align-items: center;
+    }
+    .hiw_section h3
+    {
+
+        justify-content: center;
+        align-items: center;
+        color:  rgb(157, 7, 7);
+        text-align: center;
+    }
+    .about-us {
+      position: relative;
+      padding: 100px 0;
+      font-family: 'Open Sans', sans-serif;
+     
+  }
+  .about_section
+  {
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  .about_section h3{
+    font-size: 40px;
+  }
+  
+  .about-us .row > .col-lg-6:first-of-type {
+      position: relative;
+      left: 50px;
+  }
+  
+  .about-us .small-container > p + div {
+      padding: 70px 0;
+      background-color: white;
+      box-shadow: 5px 5px 10px #d2cfcf, -5px -5px 10px #d2cfcf;
+  }
+  
+  .about-us .small-container > p + div h4 {
+      margin-bottom: 40px
+  }
+  
+  .about-us .small-container .text-right p {
+      margin-bottom: 40px;
+      width: 80%;
+      float: right;
+  }
+  
+  .about-us .small-container > p + div button {
+      background-color: #bd8cbf;
+      border: none;
+  }
+  
+  .about-us .small-container > p + div a {
+      display: block;
+      color: #FFF;
+      padding: 10px 40px;
+  }
+  
+  .about-us .item {
+      width: 200px;
+      position: absolute;
+      color: white;
+      background-color: #bd8cbf;
+  }
+  
+  .about-us .item p {
+      font-size: 15px;
+  }
+  
+  .about-us .item img {
+      width: 100%;
+      height: 150px
+  }
+  
+  .about-us .item h5 {
+      margin: 5px 0;
+  }
+  
+  .about-us .item p {
+      margin-bottom: 5px;
+  }
+  
+  .about-us .item:first-of-type {
+      left: 405px;
+      bottom: 115px;
+      z-index: 2;
+      box-shadow: -2px 2px 10px #5d5959;
+  }
+  
+  .about-us .item:nth-of-type(2) {
+      left: 105px;
+      bottom: 115px;
+      z-index: 2;
+      box-shadow: 2px 2px 10px #5d5959;
+  }
+  
+  .about-us .item:nth-of-type(3) {
+      position: relative;
+      top: 162px;
+      left: -45px;
+  }
+  
+  .about-us .item:nth-of-type(3) img {
+      position: absolute;
+      bottom: 70px;
+      right: 0px;
+      z-index: 0;
+  }
+  
+  .about-us .item:last-of-type {
+      left: 268px;
+      top: 90px;
+  }
+  
+  .about-us .first {
+      width: 100px;
+      height: 200px;
+      position: absolute;
+      background-color: #bd8cbf;
+      top: 140px;
+      z-index: -5;
+  }
+  
+  .about-us .second {
+      width: 100px;
+      height: 200px;
+      position: absolute;
+      background-color: #bd8cbf;
+      bottom: 58px;
+      right: 34px;
+      z-index: -5;
+  }
+  
+  .about-us .row > div > .item:nth-of-type(3) div {
+      position: relative;
+      z-index: 5;
+      background-color: #bd8cbf;
+      padding: 5px;
+  }
+  .blue_bt {
+    width: 255px;
+    height: 58px;
+    background: black;
+    color: #fff;
+    float: left;
+    text-align: center;
+    line-height: 58px;
+    font-size: 20px;
+    font-weight: 300;
+
+   
+}
+.last h3 {
+
+  font-size: 35px;
+
+}
+.last p {
+
+  font-size: 25px;
+  
+}
+
+
+   
+.row p,h3{ 
+
+  text-align: center;
+
+}
+
+.blue_bt:hover,
+.blue_bt:focus {
+    background:red;
+    color: white;
+}
+
+@media screen and (max-width: 600px) {
+  .carol {
+    height: 650px;
+   
+  }
+  .frame{
+    margin: 0 0;
+    width: 100%;
+  }
+
+  .carol h1{
+   
+      font-size: 20px;
+   
+    }
+    .carol p{
+   
+      font-size: 12px;
+   
+    }
+
+    .custom-btn {
+      width: 100px;
+      height: 60px;
+      font-size: 10px;
+    }
+    
+
+   
+    .row p,h3{ 
+
+      text-align: center;
+   
+    }
+    .last h3 {
+
+      font-size: 15px;
+    
+    }
+    .last p {
+    
+      font-size: 12px;
+      
+    }
+    
+
+    .testimonial_blog {
+      margin-left: 0;
+      
+    }
+
+    .col-md-5   h3{
+
+      
+     font-size: 20px;
+     text-align: center;
+    
+    }
+    .col-md-5   h4{
+
+      
+      font-size: 20px;
+      text-align: center;
+     
+     }
+     .col-md-5   p{
+
+      
+      font-size: 12px;
+     
+     }
+
+     .blue_bt {
+      width: 155px;
+      height: 58px;
+      background: black;
+      color: #fff;
+      text-align: center;
+      line-height: 58px;
+      font-size: 12px;
+      font-weight: 300;
+
+      margin: 10px;
+      margin-left: 80px;
+   
+
+  }
+
+  
+  .align p{
+
+    font-size: 12px;
+
+  }
+ 
+	
+  }

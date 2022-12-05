@@ -1,0 +1,97 @@
+.our_services 
+{
+
+  margin-right: 15%;
+
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 15px;
+  align-items: center;
+  row-gap: 1em;
+  margin: 0  -15px;
+  grid-gap: 50px;
+  margin-left: 15%;
+}
+
+ .row, .row> .column
+{
+padding: 18px;
+}
+
+
+.row::after
+{
+  content: "";
+  clear: both;
+  display: table;
+  text-align: center;
+  
+}
+
+
+.our_services .column
+{
+  float:right;
+  // border-radius: 5%;
+  //width: 32%;
+  align-items: center;
+  background-color: maroon;
+  text-align:center ;
+  padding: 5px;
+  min-width: 250px;
+
+
+}
+  
+.our_services .column .card
+{
+  background-color: rgba(211, 211, 211, 0.959);
+  width:80%;
+  height: 220px;
+  margin-left: 10%;
+  margin-bottom: 5%;
+  font-size: 20px;
+  color: black;
+
+}
+.column .titles{
+  color: white;
+  font-size: 20px;
+}
+
+.title
+{
+  text-transform: uppercase;
+  text-align: center;
+  font-size:40px;
+  color:rgb(10, 5, 5);
+  font:bold;
+  
+}
+
+.subtitle
+{
+  font-size:20px;
+  color:rgb(10, 5, 5);
+  font:bold;
+  text-align: center;
+  
+
+
+}
+.tite{
+  height: 250px;
+  background-color: lightgrey;
+  //width: 80%;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  min-width: 100px;
+}
+.tite p{
+  color: black;
+  font-weight: bold;
+
+}

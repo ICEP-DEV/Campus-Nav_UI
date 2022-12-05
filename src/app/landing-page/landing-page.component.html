@@ -1,1 +1,147 @@
-<p>landing-page works!</p>
+<html>
+<head>
+<title>CampusNav</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- owl carousel js file -->
+    
+</head>
+
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <p class="w3-bar-item w3-button w3-wide"><b><i class="fa fa-map-marker w3-margin-right"></i>CampusNavigator</b></p> 
+  
+  </div>
+</div>
+<!-- Header with full-height image -->
+<header>
+	<br>
+	<div class="hero-image">
+		<div class="hero-text">
+ 
+	  <h2 >Campus Navigation</h2>
+	  
+		<h3 style="color: white ;" >For easy access and navigation to all <br> Tshwane University of Technology Campuses.</h3>
+	  <p><a routerLink="/login-reg" class="w3-button w3-black w3-padding-large w3-large w3-margin-top  w3-hover-opacity-off" style="margin-left: 30px;" >Login</a></p>
+		</div>
+	  </div>
+</header>
+
+  <!-- About Start -->
+  <div class="container-fluid py-5">
+	<div class="container">
+		<div class="row align-items-center pb-1">
+			<div class="col-lg-5">
+				<img class="img-thumbnail p-3" src="../../assets/images/camp3.jpeg" alt="" >
+			</div>
+			<div class="col-lg-7 mt-5 mt-lg-0">
+				<div class="ali">
+				<small class="bg-primary text-white text-uppercase font-weight-bold px-2">Who We Are</small>
+			</div>
+				<h1 class="mt-2 mb-4"> <u><b>About Us</b></u> </h1>
+			
+
+
+				<h5 class="w3-center">Tshwane University of Technology navigator(TUTNAV) system was implimented in 2022 by ICEP interns.
+					It is on Campus navigation system that will make it easier for students, staff and visitors navigate
+					themselves without any external help.
+			
+					</h5>
+				<a href="https://www.tut.ac.za/" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold">More</a>
+			</div>
+		</div>
+		<div class="row mt-4">
+			<div class="col-md-4">
+				<div class="d-flex align-items-center border mb-4 mb-lg-0 p-4" style="height: 120px;">
+					<i class="fa fa-2x fa-map-marker text-primary mr-3"></i>
+					<div class="d-flex flex-column">
+						<h5 class="font-weight-bold">Our Address</h5>
+						<p class="m-0">Aubrey Matlakala St, Soshanguve - K, Soshanguve, 0001
+						</p>
+						<a href="https://www.tut.ac.za/other/campuses/soshanguve-south">TUT Sosha Campus Address Link</a>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="d-flex align-items-center border mb-4 mb-lg-0 p-4" style="height: 120px;">
+					<i class="fa fa-2x fa-envelope-open text-primary mr-3"></i>
+					<div class="d-flex flex-column">
+						<h5 class="font-weight-bold">Email Us</h5>
+						<p class="m-0">campusguide@gmail.com</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="d-flex align-items-center border mb-4 mb-lg-0 p-4" style="height: 120px;">
+					<i class="fas fa-2x fa-phone-alt text-primary mr-3"></i>
+					<div class="d-flex flex-column">
+						<h5 class="font-weight-bold">Call Us</h5>
+						<p class="m-0">086 110 2421</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<section id="team">
+	<app-ourteam></app-ourteam>
+  </section>
+
+<!--faq-->
+<div class="mash">   
+	<br>
+  <h2 class="w3-center">Frequently Asked Questions</h2>
+ 
+ <button class="accordion">Can I Access The Web From Anywhere?</button>
+ <div class="panel">
+   <p>yes</p>
+ </div>
+ 
+ <button class="accordion">How does it know where I am?</button>
+ <div class="panel">
+     <p>Simply by using (live)current Location nor by entering where you are </p>
+ </div>
+ 
+ <button class="accordion">How do i tell it where i want to go?</button>
+ <div class="panel">
+     <p>just By entering your desired destination, then you shall be provided with directions</p>
+ </div>
+
+ 
+ <script>
+ var acc = document.getElementsByClassName("accordion");
+ var i;
+ 
+ for (i = 0; i < acc.length; i++) {
+	
+   acc[i].addEventListener("click", function() {
+     this.classList.toggle("active");
+     var panel = this.nextElementSibling;
+     if (panel.style.display === "block") {
+       panel.style.display = "none";
+     } else {
+       panel.style.display = "block";
+     }
+   });
+ }
+ </script>
+ 
+</div>
+
+
+  
+		
+	
+
+
+
+</body>
+
+	  
+</html>
+<app-footer></app-footer>
